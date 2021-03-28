@@ -33,11 +33,6 @@ public class CrewServiceImpl implements CrewService {
     }
 
     @Override
-    public Crew update(Crew object) {
-        return crewRepository.save(object);
-    }
-
-    @Override
     public Crew save(Crew object) {
         return crewRepository.save(object);
     }

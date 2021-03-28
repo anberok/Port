@@ -73,7 +73,7 @@ public class WeaponController {
     @ApiOperation(value = "Update existing weapon by id")
     public ResponseEntity<WeaponDTO> update(@PathVariable("id") long id, @RequestBody WeaponDTO weaponDTO) {
         if (id == weaponDTO.getId()) {
-            Weapon weapon = weaponService.update(weaponMapper.convertToEntity(weaponDTO));
+            Weapon weapon = weaponService.save(weaponMapper.convertToEntity(weaponDTO));
             return ResponseEntity.status(HttpStatus.OK).body(weaponMapper.convertToDto(weapon));
         } else {
             return ResponseEntity.status(HttpStatus.BAD_REQUEST).build();

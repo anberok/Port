@@ -63,7 +63,7 @@ public class CrewController {
     @ApiOperation(value = "Update existing crew by id")
     public ResponseEntity<CrewDTO> update(@PathVariable("id") Long id, @RequestBody CrewDTO crewDTO) {
         if (id == crewDTO.getId()) {
-            Crew crew = crewService.update(crewMapper.convertToEntity(crewDTO));
+            Crew crew = crewService.save(crewMapper.convertToEntity(crewDTO));
             return ResponseEntity.status(HttpStatus.OK).body(crewMapper.convertToDto(crew));
         } else {
             return ResponseEntity.status(HttpStatus.BAD_REQUEST).build();

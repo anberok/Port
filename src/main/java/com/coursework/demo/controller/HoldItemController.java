@@ -73,7 +73,7 @@ public class HoldItemController {
     @ApiOperation(value = "Update existing hold item by id")
     public ResponseEntity<HoldItemDTO> update(@PathVariable("id") long id, @RequestBody HoldItemDTO holdItemDTO) {
         if (id == holdItemDTO.getId()) {
-            HoldItem holdItem = holdItemService.update(holdItemMapper.convertToEntity(holdItemDTO));
+            HoldItem holdItem = holdItemService.save(holdItemMapper.convertToEntity(holdItemDTO));
             return ResponseEntity.status(HttpStatus.OK).body(holdItemMapper.convertToDto(holdItem));
         } else {
             return ResponseEntity.status(HttpStatus.BAD_REQUEST).build();

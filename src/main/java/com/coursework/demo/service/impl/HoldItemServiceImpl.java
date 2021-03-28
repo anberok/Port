@@ -33,11 +33,6 @@ public class HoldItemServiceImpl implements HoldItemService {
     }
 
     @Override
-    public HoldItem update(HoldItem object) {
-        return holdItemRepository.save(object);
-    }
-
-    @Override
     public HoldItem save(HoldItem object) {
         return holdItemRepository.save(object);
     }

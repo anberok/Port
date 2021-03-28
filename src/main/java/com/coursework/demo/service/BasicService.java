@@ -11,8 +11,6 @@ interface BasicService<T extends Serializable, I extends Serializable> {
 
     List<T> getAll(Pageable pageable);
 
-    T update(T object);
-
     T save(T object);
 
     T delete(T object);

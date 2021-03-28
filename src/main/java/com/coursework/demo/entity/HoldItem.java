@@ -1,6 +1,8 @@
 package com.coursework.demo.entity;
 
 import com.coursework.demo.entity.enums.HoldType;
+import lombok.AllArgsConstructor;
+import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
@@ -18,6 +20,8 @@ import java.io.Serializable;
 @Entity
 @Data
 @NoArgsConstructor
+@AllArgsConstructor
+@Builder
 @Table(name = "hold_items")
 public class HoldItem implements Serializable {
     @Id

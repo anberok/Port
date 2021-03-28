@@ -33,11 +33,6 @@ public class WeaponServiceImpl implements WeaponService {
     }
 
     @Override
-    public Weapon update(Weapon object) {
-        return weaponRepository.save(object);
-    }
-
-    @Override
     public Weapon save(Weapon object) {
         return weaponRepository.save(object);
     }

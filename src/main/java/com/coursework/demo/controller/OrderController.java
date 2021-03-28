@@ -53,7 +53,7 @@ public class OrderController {
     }
 
     @GetMapping("/captain")
-    @ApiOperation(value = "Get the list of all crews")
+    @ApiOperation(value = "Get the list of all orders by captain")
     public ResponseEntity<List<OrderDTO>> getCaptainOrders(@RequestParam String captain) {
         return ResponseEntity.ok().body(orderMapper.convertToDtoList(orderService.findAllByCaptain(captain)));
     }
@@ -70,7 +70,7 @@ public class OrderController {
     @ApiOperation(value = "Update existing order by id")
     public ResponseEntity<OrderDTO> update(@PathVariable("id") long id, @RequestBody OrderDTO orderDTO) {
         if (id == orderDTO.getId()) {
-            Order order = orderService.update(orderMapper.convertToEntity(orderDTO));
+            Order order = orderService.save(orderMapper.convertToEntity(orderDTO));
             return ResponseEntity.status(HttpStatus.OK).body(orderMapper.convertToDto(order));
         } else {
             return ResponseEntity.status(HttpStatus.BAD_REQUEST).build();

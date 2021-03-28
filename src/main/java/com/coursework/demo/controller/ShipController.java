@@ -63,7 +63,7 @@ public class ShipController {
     @ApiOperation(value = "Update existing ship by id")
     public ResponseEntity<ShipDTO> update(@PathVariable("id") long id, @RequestBody ShipDTO shipDTO) {
         if (id == shipDTO.getId()) {
-            Ship ship = shipService.update(shipMapper.convertToEntity(shipDTO));
+            Ship ship = shipService.save(shipMapper.convertToEntity(shipDTO));
             return ResponseEntity.status(HttpStatus.OK).body(shipMapper.convertToDto(ship));
         } else {
             return ResponseEntity.status(HttpStatus.BAD_REQUEST).build();
