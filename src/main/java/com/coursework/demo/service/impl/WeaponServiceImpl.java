@@ -15,7 +15,7 @@ import java.util.List;
 @Service
 public class WeaponServiceImpl implements WeaponService {
 
-    WeaponRepository weaponRepository;
+    private WeaponRepository weaponRepository;
 
     @Autowired
     public WeaponServiceImpl(WeaponRepository weaponRepository) {

@@ -9,6 +9,7 @@ import org.springframework.test.context.jdbc.Sql;
 import java.util.Arrays;
 import java.util.List;
 
+import static com.coursework.demo.TestData.getExpectedWeaponsTypeDTOList;
 import static com.coursework.demo.entity.enums.WeaponsType.CANNON;
 import static com.coursework.demo.entity.enums.WeaponsType.CUTLASS;
 import static com.coursework.demo.entity.enums.WeaponsType.MUSKET;
@@ -27,14 +28,6 @@ public class WeaponRepositoryTest {
 
         assertFalse(result.isEmpty());
         assertTrue(result.containsAll(getExpectedWeaponsTypeDTOList()));
-    }
-
-    private List<WeaponsTypeDTO> getExpectedWeaponsTypeDTOList() {
-        return Arrays.asList(
-                WeaponsTypeDTO.builder().name(MUSKET).quantity(110L).build(),
-                WeaponsTypeDTO.builder().name(CANNON).quantity(10L).build(),
-                WeaponsTypeDTO.builder().name(CUTLASS).quantity(5L).build()
-        );
     }
 
 }

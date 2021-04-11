@@ -20,6 +20,7 @@ import java.util.Collections;
 import java.util.List;
 import java.util.Optional;
 
+import static com.coursework.demo.TestData.getWeapon;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.mockito.ArgumentMatchers.anyLong;
 import static org.mockito.Mockito.doNothing;
@@ -96,14 +97,6 @@ public class WeaponServiceImplTest {
 
         assertEquals(weapon, result);
         verify(weaponRepository).delete(weapon);
-    }
-
-    private Weapon getWeapon() {
-        return Weapon.builder()
-                .quantity(5)
-                .weaponsType(WeaponsType.BLUNDERBUS)
-                .wear(Wear.MINIMAL_WEAR)
-                .build();
     }
 }
 

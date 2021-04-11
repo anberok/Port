@@ -17,6 +17,7 @@ import java.util.Collections;
 import java.util.List;
 import java.util.Optional;
 
+import static com.coursework.demo.TestData.getHoldItem;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.mockito.ArgumentMatchers.anyLong;
 import static org.mockito.Mockito.doNothing;
@@ -94,13 +95,5 @@ public class HoldItemServiceImplTest {
 
         assertEquals(holdItem, result);
         verify(holdItemRepository).delete(holdItem);
-    }
-
-    private HoldItem getHoldItem() {
-        return HoldItem.builder()
-                .holdType(HoldType.ALCOHOL)
-                .name("Jack Daniels")
-                .quantity(10)
-                .build();
     }
 }

@@ -82,6 +82,6 @@ public class OrderController {
     public ResponseEntity delete(@PathVariable("id") long id) {
         Order order = orderService.getById(id);
         orderService.delete(order);
-        return ResponseEntity.status(HttpStatus.OK).build();
+        return ResponseEntity.status(HttpStatus.NO_CONTENT).build();
     }
 }

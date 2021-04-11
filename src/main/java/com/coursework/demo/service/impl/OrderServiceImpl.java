@@ -7,7 +7,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
 
-import javax.annotation.Resource;
 import javax.transaction.Transactional;
 import java.util.List;
 
@@ -15,7 +14,7 @@ import java.util.List;
 @Service
 public class OrderServiceImpl implements OrderService {
 
-    OrderRepository orderRepository;
+    private OrderRepository orderRepository;
 
     @Autowired
     public OrderServiceImpl(OrderRepository orderRepository) {

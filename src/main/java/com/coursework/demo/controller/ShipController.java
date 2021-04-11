@@ -75,6 +75,6 @@ public class ShipController {
     public ResponseEntity delete(@PathVariable("id") long id){
         Ship ship = shipService.getById(id);
         shipService.delete(ship);
-        return ResponseEntity.status(HttpStatus.OK).build();
+        return ResponseEntity.status(HttpStatus.NO_CONTENT).build();
     }
 }

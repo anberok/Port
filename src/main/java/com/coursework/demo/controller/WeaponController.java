@@ -85,6 +85,6 @@ public class WeaponController {
     public ResponseEntity delete(@PathVariable("id") long id) {
         Weapon weapon = weaponService.getById(id);
         weaponService.delete(weapon);
-        return ResponseEntity.status(HttpStatus.OK).build();
+        return ResponseEntity.status(HttpStatus.NO_CONTENT).build();
     }
 }

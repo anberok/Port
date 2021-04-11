@@ -14,7 +14,7 @@ import java.util.List;
 @Service
 public class ShipServiceImpl implements ShipService {
 
-    ShipRepository shipRepository;
+    private ShipRepository shipRepository;
 
     @Autowired
     public ShipServiceImpl(ShipRepository shipRepository) {

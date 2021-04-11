@@ -16,6 +16,7 @@ import java.util.Collections;
 import java.util.List;
 import java.util.Optional;
 
+import static com.coursework.demo.TestData.getShip;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.mockito.ArgumentMatchers.anyLong;
 import static org.mockito.Mockito.doNothing;
@@ -79,14 +80,6 @@ public class ShipServiceImplTest {
 
         assertEquals(ship, result);
         verify(shipRepository).delete(ship);
-    }
-
-    private Ship getShip() {
-        return Ship.builder()
-                .shipType(ShipType.BARQUE)
-                .speed(200)
-                .name("Victory")
-                .build();
     }
 }
 

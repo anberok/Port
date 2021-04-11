@@ -10,6 +10,7 @@ import org.springframework.test.context.jdbc.Sql;
 import java.util.Arrays;
 import java.util.List;
 
+import static com.coursework.demo.TestData.getExpectedHoldTypeDTOList;
 import static com.coursework.demo.entity.enums.HoldType.*;
 import static com.coursework.demo.entity.enums.HoldType.PROVISIONS;
 import static org.junit.jupiter.api.Assertions.assertEquals;
@@ -29,14 +30,5 @@ public class HoldItemRepositoryTest {
 
         assertFalse(result.isEmpty());
         assertTrue(result.containsAll(getExpectedHoldTypeDTOList()));
-    }
-
-    private List<HoldTypeDTO> getExpectedHoldTypeDTOList() {
-        return Arrays.asList(
-                HoldTypeDTO.builder().name(PROVISIONS).quantity(100L).build(),
-                HoldTypeDTO.builder().name(CLOTH).quantity(400L).build(),
-                HoldTypeDTO.builder().name(ALCOHOL).quantity(500L).build(),
-                HoldTypeDTO.builder().name(JEWELLERY).quantity(100L).build()
-        );
     }
 }

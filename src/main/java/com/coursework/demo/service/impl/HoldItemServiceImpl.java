@@ -15,7 +15,7 @@ import java.util.List;
 @Service
 public class HoldItemServiceImpl implements HoldItemService {
 
-    HoldItemRepository holdItemRepository;
+    private HoldItemRepository holdItemRepository;
 
     @Autowired
     public HoldItemServiceImpl(HoldItemRepository holdItemRepository) {
